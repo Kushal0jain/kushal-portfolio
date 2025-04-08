@@ -31,7 +31,7 @@ const Footer = () => {
     <Github size={20} />
   </a>
   <a
-    href="https://www.instagram.com/" // replace with your real Insta link
+    href="https://www.instagram.com/kushal._._.jain/" 
     target="_blank"
     rel="noopener noreferrer"
     className="hover:text-indigo-400 transition"
