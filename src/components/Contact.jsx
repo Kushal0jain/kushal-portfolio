@@ -15,16 +15,16 @@ const Contact = () => {
     e.preventDefault()
 
     emailjs.send(
-      'service_j6h55hv',        // Replace with your actual service ID
+      'service_j6h55hv',
       formData,
-      '6SrQLGRWj7K9avG_z'         // Replace with your public key
+      '6SrQLGRWj7K9avG_z'
     ).then(() => {
       alert('Message sent successfully!')
       setFormData({ name: '', email: '', message: '' })
       setShowForm(false)
     }).catch((error) => {
-      alert('Something went wrong. Try again.')
-      console.error(error)
+      alert('Something went wrong. Please try again.')
+      console.error('EmailJS Error:', error)
     })
   }
 
@@ -33,7 +33,7 @@ const Contact = () => {
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-teal-400 mb-6">Let's Connect</h2>
         <p className="text-gray-300 mb-8">
-          Have a project in mind? Let's collaborate and bring your ideas to life.
+          I'd love to connect with you! Whether you have a project in mind or just want to chat, feel free to reach out. I'm always open to new opportunities and collaborations.
         </p>
         <button
           onClick={toggleForm}
