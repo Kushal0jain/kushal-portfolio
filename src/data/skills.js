@@ -1,5 +1,5 @@
-import { FaReact, FaJava, FaHtml5, FaCss3Alt, FaGitAlt, FaGithub, FaDatabase  } from 'react-icons/fa'
-import { SiTailwindcss, SiMysql, SiMongodb, SiJavascript, SiTypescript, SiPostgresql } from 'react-icons/si'
+import { FaReact, FaJava, FaHtml5, FaCss3Alt, FaGithub, FaDatabase  } from 'react-icons/fa'
+import { SiTailwindcss, SiMysql, SiMongodb, SiTypescript } from 'react-icons/si'
 
 export const skills = [
   { name: 'React', icon: <FaReact className="text-cyan-400" /> },
