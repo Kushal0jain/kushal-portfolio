@@ -1,51 +1,48 @@
-import React from "react";
-import { Github, Linkedin, Instagram } from "lucide-react";
-
+import React from 'react'
+import { FaLinkedin, FaGithub, FaEnvelope, FaInstagram } from 'react-icons/fa'
+import { FaI } from 'react-icons/fa6'
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-6 mt-10">
-      <div className="max-w-4xl mx-auto px-4 text-center">
-        <p className="text-lg font-semibold mb-2">Let's Connect!</p>
-        <p className="text-sm mb-4">
-          Email: <a href="mailto:jainkushal0909@gmail.com" className="underline hover:text-indigo-400">jainkushal0909@gmail.com</a>
-        </p>
-        <p className="text-sm mb-4">
-          Phone: <a href="tel: +91 7727012340" className="underline hover:text-indigo-400">+91 7727012340</a>
-        </p>
-        <div className="flex justify-center gap-6 text-sm mb-2">
-  <a
-    href="https://www.linkedin.com/in/kushal-jain-0a2554204/"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-indigo-400 transition"
-  >
-    <Linkedin size={20} />
-  </a>
-  <a
-    href="https://github.com/kushal0jain"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-indigo-400 transition"
-  >
-    <Github size={20} />
-  </a>
-  <a
-    href="https://www.instagram.com/kushal._._.jain/" 
-    target="_blank"
-    rel="noopener noreferrer"
-    className="hover:text-indigo-400 transition"
-  >
-    <Instagram size={20} />
-  </a>
-</div>
-
-<p className="text-xs text-gray-400 mt-2">
-  © {new Date().getFullYear()} Kushal Jain. Built with ❤️
-</p>
+    <footer className="bg-black text-white py-10 text-center border-t border-gray-800">
+      <div className="flex justify-center gap-6 text-2xl mb-4">
+        <a
+          href="https://www.linkedin.com/in/kushal-jain-0a2554204/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-teal-400 transition"
+        >
+          <FaLinkedin />
+        </a>
+        <a
+          href="https://github.com/Kushal0jain"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-teal-400 transition"
+        >
+          <FaGithub />
+        </a>
+        <a
+          href="mailto:jainkushal0909@gmail.com"
+          className="hover:text-teal-400 transition"
+        >
+          <FaEnvelope />
+        </a>
+        <a
+          href="https://www.instagram.com/kushal._._.jain/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="hover:text-teal-400 transition"
+        >
+          <FaInstagram />
+        </a>
       </div>
-    </footer>
-  );
-};
 
-export default Footer;
+      <p className="text-sm text-gray-400">
+        © {new Date().getFullYear()} Kushal Jain. All rights reserved.
+      </p>
+    </footer>
+  )
+}
+
+export default Footer

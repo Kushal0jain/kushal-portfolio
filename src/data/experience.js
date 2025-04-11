@@ -2,7 +2,7 @@ const experience = [
     {
       role: "Front-End Developer (Intern)",
       company: "ZPLYS.AI",
-      duration: "March 2025 – Present",
+      duration: "December 2025 – Present",
       location: "Hybrid",
       description:[
         "Developed and optimized scalable applications as a Front-End Developer at ZPLYS.AI.",
@@ -12,7 +12,7 @@ const experience = [
     {
       role: "Java Developer Trainee",
       company: "FUEL (Friends Union for Energising Lives)",
-      duration: "Aug 2024 – Oct 2024",
+      duration: "May 2024 – July 2024",
       location: "Jaipur",
       description:[
         "Trained in Core Java, OOP, and MySQL, completing daily tasks efficiently.",

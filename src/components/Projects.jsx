@@ -1,58 +1,44 @@
-import { Code2 } from "lucide-react";
-import projects from "../data/projects"; // adjust path if needed
+import React from 'react'
+import projects from '../data/projects'
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 px-6 sm:px-12 bg-white text-gray-900">
-      <h2 className="text-4xl font-bold text-center mb-12 tracking-wide text-gray-800">
-        Projects
-      </h2>
+    <section id="projects" className="bg-gray-950 text-white py-16 px-6">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-teal-400 text-center mb-12">Projects</h2>
 
-      <div className="max-w-5xl mx-auto space-y-10">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-gray-50 border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-md hover:shadow-lg transition duration-300"
-          >
-            <div className="flex items-center bg-inherit justify-between mb-3">
-              <h3 className="text-2xl font-semibold text-gray-800">
-                {project.title}
-              </h3>
-              <Code2 className="text-indigo-500" size={28} />
-            </div>
-
-            <div className="mb-3 flex flex-wrap gap-2">
-              {project.techStack?.split(',').map((tech, i) => (
-                <span
-                  key={i}
-                  className="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded-full"
-                >
-                  {tech.trim()}
-                </span>
-              ))}
-            </div>
-
-            <ul className="list-disc list-inside space-y-2 text-gray-700 text-base mb-3">
-              {project.description.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
-
-            {project.link && (
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects?.map((project, idx) => (
+            <div
+              key={idx}
+              className="bg-gray-900 p-6 rounded-xl shadow-md hover:shadow-lg transition"
+            >
+              <h3 className="text-xl font-semibold text-teal-300 mb-2">{project.title}</h3>
+              <p className="text-gray-300 mb-4">{project.description}</p>
+              <div className="flex flex-wrap gap-2 text-sm mb-4">
+                {project.tech?.map((t, i) => (
+                  <span
+                    key={i}
+                    className="bg-teal-800 text-white px-2 py-1 rounded-full"
+                  >
+                    {t}
+                  </span>
+                ))}
+              </div>
               <a
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block mt-2 text-indigo-600 hover:underline font-medium"
+                className="text-teal-400 hover:underline"
               >
-                🔗 View Project
+                View on GitHub →
               </a>
-            )}
-          </div>
-        ))}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Projects;
+export default Projects

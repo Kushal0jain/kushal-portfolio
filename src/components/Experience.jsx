@@ -1,41 +1,24 @@
-import { Briefcase } from "lucide-react";
-import experience from "../data/experience"; // ensure correct path
+import React from 'react'
+import experience from '../data/experience'
 
 const Experience = () => {
   return (
-    <section id="experience" className="py-20 px-6 sm:px-12 bg-gradient-to-br from-slate-900 to-slate-800 text-white">
-      <h2 className="text-4xl font-bold text-center mb-12 tracking-wide">
-        Experience
-      </h2>
-
-      <div className="max-w-5xl mx-auto space-y-10">
-        {experience.map((exp, index) => (
-          <div
-            key={index}
-            className="bg-white/5 border border-white/10 rounded-2xl p-6 sm:p-8 shadow-lg hover:shadow-2xl transition duration-300 backdrop-blur-md"
-          >
-            <div className="flex items-start justify-between mb-4">
-              <div>
-                <h3 className="text-2xl font-semibold text-white mb-1">
-                  {exp.role}
-                </h3>
-                <p className="text-sm text-gray-300">
-                  {exp.company} — {exp.location}
-                </p>
-              </div>
-              <Briefcase size={28} className="text-indigo-400" />
+    <section id="experience" className="bg-black text-white py-16 px-6">
+      <div className="max-w-4xl mx-auto">
+        <h2 className="text-3xl font-bold text-teal-400 text-center mb-12">Experience</h2>
+        <div className="flex flex-col gap-10">
+          {experience.map((exp, idx) => (
+            <div key={idx} className="relative pl-6 border-l-4 border-teal-400">
+              <div className="mb-1 text-teal-300 font-semibold">{exp.duration}</div>
+              <h3 className="text-xl font-bold">{exp.title}</h3>
+              <p className="italic text-gray-400 mb-1">{exp.company}</p>
+              <p className="text-gray-300">{exp.description}</p>
             </div>
-            <p className="text-sm text-gray-400 mb-4">{exp.duration}</p>
-            <ul className="list-disc list-inside space-y-2 text-gray-200 text-base">
-              {exp.description.map((point, i) => (
-                <li key={i}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Experience;
+export default Experience
