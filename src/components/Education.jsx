@@ -12,7 +12,7 @@ const Education = () => {
               <h3 className="text-xl font-semibold text-teal-300">{edu.degree}</h3>
               <p className="text-gray-300">{edu.institution}</p>
               <p className="text-gray-400 text-sm">{edu.year}</p>
-              <p className="text-gray-400 text-sm">Result: {edu.result}</p>
+              <p className="text-gray-400 text-sm">Result: {edu.grade}</p>
             </div>
           ))}
         </div>

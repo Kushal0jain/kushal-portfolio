@@ -8,7 +8,7 @@ const Experience = () => {
         <h2 className="text-3xl font-bold text-teal-400 text-center mb-12">Experience</h2>
         <div className="flex flex-col gap-10">
           {experience.map((exp, idx) => (
-            <div key={idx} className="relative pl-6 border-l-4 border-teal-400">
+            <div key={idx} className="relative bg-gray-800 p-6 rounded-xl pl-6 border-l-4 border-teal-400">
               <div className="mb-1 text-teal-300 font-semibold">{exp.duration}</div>
               <h3 className="text-xl font-bold">{exp.title}</h3>
               <p className="italic text-gray-400 mb-1">{exp.company}</p>

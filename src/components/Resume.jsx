@@ -14,15 +14,7 @@ const Resume = () => {
             download
             className="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-xl transition-all"
           >
-            Download Resume
-          </a>
-          <a
-            href="/Resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="border border-teal-400 hover:bg-teal-400 text-white hover:text-black font-semibold py-3 px-6 rounded-xl transition-all"
-          >
-            View Resume
+            Download
           </a>
         </div>
       </div>

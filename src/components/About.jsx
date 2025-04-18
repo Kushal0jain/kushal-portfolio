@@ -15,8 +15,12 @@ const About = () => {
         like MySql, MongoDB.
         <br /><br />
         I’ve worked on projects like Banking System and a responsive UI for a
-        content analysis platform during my internship at ZPLYS.AI. I love clean code, solving
+        content analysis platform during my training at FUEL. I love clean code, solving
         logic problems, and turning ideas into reality.
+        <br /><br />
+        I also worked as Front-End Developer at ZPLYS.AI, where I honed my skills in
+        React, Tailwind CSS, and backend tools like MongoDb. I contributed to
+        the development of a user-friendly and efficient platform for content analysis.
       </p>
     </section>
   )

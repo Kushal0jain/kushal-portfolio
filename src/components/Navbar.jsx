@@ -20,7 +20,7 @@ const Navbar = () => {
           onClick={() => handleClick('Home')}
           className="text-2xl font-bold text-teal-400 cursor-pointer"
         >
-          Kushal.dev
+          Kushal Jain
         </h1>
 
         <div className="hidden md:flex gap-6">

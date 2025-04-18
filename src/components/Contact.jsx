@@ -1,36 +1,20 @@
 import React, { useState } from 'react'
-import emailjs from 'emailjs-com'
 
 const Contact = () => {
   const [showForm, setShowForm] = useState(false)
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
 
   const toggleForm = () => setShowForm(!showForm)
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value })
-  }
+  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
 
   const handleSubmit = (e) => {
     e.preventDefault()
-
-    emailjs.send(
-      'service_j6h55hv',
-      'template_bp34acd',
-      formData,
-      '6SrQLGRWj7K9avG_z'
-    ).then(() => {
-      alert('Message sent successfully!')
-      setFormData({ name: '', email: '', message: '' })
-      setShowForm(false)
-    }).catch((error) => {
-      alert('Something went wrong. Please try again.')
-      console.error('EmailJS Error:', error)
-    })
+    // You can add your contact form submission logic here
+    toggleForm()
   }
 
   return (
-    <section id="contact" className="bg-gray-900 text-white py-16 px-6 relative">
+    <section id="contact" className="bg-black text-white py-16 px-6 relative">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-teal-400 mb-6">Let's Connect</h2>
         <p className="text-gray-300 mb-8">
