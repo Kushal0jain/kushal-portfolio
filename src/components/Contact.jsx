@@ -1,24 +1,84 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
 
 const Contact = () => {
-  const [showForm, setShowForm] = useState(false)
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [showForm, setShowForm] = useState(false);
+  const toggleForm = () => setShowForm(!showForm);
+  const [formData, setFormData] = useState({
+    name: "",
+    emailPrefix: "",
+    customDomain: "",
+    message: "",
+  });
+  const [selectedDomain, setSelectedDomain] = useState("gmail.com");
+  const [useCustom, setUseCustom] = useState(false);
 
-  const toggleForm = () => setShowForm(!showForm)
-  const handleChange = (e) => setFormData({ ...formData, [e.target.name]: e.target.value })
+  const predefinedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com'];
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+  
+    if (name === 'emailPrefix' && !useCustom) {
+      // Prevent entering @ in the emailPrefix if using predefined domains
+      if (value.includes('@')) return;
+    }
+  
+    if (name === 'customDomain' && useCustom) {
+      const trimmedValue = value.trim().toLowerCase();
+      if (predefinedDomains.includes(trimmedValue)) {
+        setUseCustom(false);
+        setSelectedDomain(trimmedValue);
+        setFormData({ ...formData, customDomain: '' , emailPrefix: ''});
+      }
+      }
+  
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  
+
+  const handleDomainChange = (e) => {
+    const value = e.target.value;
+    setSelectedDomain(value);
+    if (value === 'other') {
+      setUseCustom(true);
+      setFormData({ ...formData, emailPrefix: '', customDomain: '' });
+    } else {
+      setUseCustom(false);
+      setFormData({ ...formData, customDomain: '' });
+    }
+  };
+  
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-    // You can add your contact form submission logic here
-    toggleForm()
-  }
+    e.preventDefault();
+      const fullEmail = useCustom
+      ? `${formData.customDomain}`
+      : `${formData.emailPrefix}@${selectedDomain}`;
+    console.log({
+      name: formData.name,
+      email: fullEmail,
+      message: formData.message,
+    });
+    setFormData({
+      name: "",
+      emailPrefix: "",
+      customDomain: "",
+      message: "",
+    });
+    setSelectedDomain("");
+    setUseCustom(false);
+      toggleForm();
+    };
 
   return (
     <section id="contact" className="bg-black text-white py-16 px-6 relative">
       <div className="max-w-3xl mx-auto text-center">
         <h2 className="text-3xl font-bold text-teal-400 mb-6">Let's Connect</h2>
         <p className="text-gray-300 mb-8">
-          I'd love to connect with you! Whether you have a project in mind or just want to chat, feel free to reach out. I'm always open to new opportunities and collaborations.
+          I'd love to connect with you! Whether you have a project in mind or
+          just want to chat, feel free to reach out. I'm always open to new
+          opportunities and collaborations.
         </p>
         <button
           onClick={toggleForm}
@@ -37,7 +97,9 @@ const Contact = () => {
             >
               ×
             </button>
-            <h3 className="text-2xl font-bold mb-4 text-center text-teal-600">Contact Form</h3>
+            <h3 className="text-2xl font-bold mb-4 text-center text-teal-600">
+              Contact Form
+            </h3>
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -48,15 +110,43 @@ const Contact = () => {
                 className="w-full border border-gray-300 px-4 py-2 rounded-lg mb-4"
                 required
               />
-              <input
-                type="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                placeholder="Your Email"
-                className="w-full border border-gray-300 px-4 py-2 rounded-lg mb-4"
-                required
-              />
+
+              <div className="flex gap-2 mb-4">
+                <input
+                  type="text"
+                  name="emailPrefix"
+                  value={formData.emailPrefix}
+                  onChange={handleChange}
+                  placeholder="Email ID"
+                  className="w-1/2 border border-gray-300 px-4 py-2 rounded-lg"
+                  disabled={useCustom}
+                  required
+                />
+                <select
+                  onChange={handleDomainChange}
+                  className="w-1/2 border border-gray-300 px-4 py-2 rounded-lg"
+                >
+                  <option value="gmail.com">@gmail.com</option>
+                  <option value="yahoo.com">@yahoo.com</option>
+                  <option value="outlook.com">@outlook.com</option>
+                  <option value="hotmail.com">@hotmail.com</option>
+                  <option value="icloud.com">@icloud.com</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              {useCustom && (
+                <input
+                  type="email"
+                  name="customDomain"
+                  value={formData.customDomain}
+                  onChange={handleChange}
+                  placeholder="Enter custom domain (e.g. example.com)"
+                  className="w-full border border-gray-300 px-4 py-2 rounded-lg mb-4"
+                  required
+                />
+              )}
+
               <textarea
                 name="message"
                 value={formData.message}
@@ -72,12 +162,15 @@ const Contact = () => {
               >
                 Send Message
               </button>
+              <span className="text-xs text-gray-500 italic">
+                *Not working yet
+              </span>
             </form>
           </div>
         </div>
       )}
     </section>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;

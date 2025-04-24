@@ -17,6 +17,18 @@ const certifications = [
       year: "2024",
       link: "/certs/oracle.pdf"
     },
+    {
+      title: "OOPs with Java",
+      issuer: "LinkedIn Learning",
+      year: "2023",
+      link: "/certs/OOPs.jpg" 
+    },
+    {
+      title: "SQL",
+      issuer: "LinkedIn Learning",
+      year: "2023",
+      link: "/certs/SQL.pdf"
+    },
   ];
   
   export default certifications;
