@@ -22,18 +22,24 @@ const projects = [
     ],
     link: "https://zplys.ai/landing",
   },
-  // {
-  //   title: "Portfolio Website",
-  //   techStack: "React, Tailwind CSS",
-  //   description: [
-  //     "Designed and developed a fully responsive portfolio website using React and Tailwind CSS",
-  //     "Implemented clean, modern UI inspired by shahnishant.com.np with smooth section transitions",
-  //     "Built modular React components for About, Skills, Experience, Projects, Certifications, and Education",
-  //     "Integrated scroll navigation that smoothly links to each on-page section",
-  //     "Used dynamic data files for content management, allowing easy updates without code changes"
-  //   ],
-  //   link: "https://github.com/Kushal0jain/kushal-portfolio",
-  // }
+  {
+    title: "Weather Application",
+    techStack: "React, Tailwind CSS",
+    description: [
+      "Interactive React application that dynamically switches between multiple themes on button click.",
+      "Leveraged Tailwind CSS to define and manage vibrant, responsive themes with smooth animations.",
+      "Implemented dynamic state-based logic in React to apply theme classes to the DOM.",
+      "Focused on clean UI transitions and an engaging user experience with animated toggle effects.",
+    ],
+    // link: "https://github.com/Kushal0jain/Banking_Application",
+  },
 ];
 
 export default projects;
+
+
+
+// Interactive React application that dynamically switches between multiple themes on button click.
+// Leveraged Tailwind CSS to define and manage vibrant, responsive themes with smooth animations.
+// Implemented dynamic state-based logic in React to apply theme classes to the DOM.
+// Focused on clean UI transitions and an engaging user experience with animated toggle effects.
