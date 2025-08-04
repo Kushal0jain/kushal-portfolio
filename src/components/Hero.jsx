@@ -11,7 +11,7 @@ const Hero = () => {
       />
       <h1 className="text-3xl font-bold mt-4">Kushal Jain</h1>
       <p className="text-indigo-600 font-semibold mt-1">
-        Java & Front-End Developer
+        Java & Front-End Developer efsve
       </p>
       <p className="mt-2 text-gray-600 max-w-xl mx-auto">
         Passionate about building clean, efficient, and scalable web applications.

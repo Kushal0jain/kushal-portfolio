@@ -1,18 +1,14 @@
-import React, { useState } from 'react'
+import React from 'react'
 import projects from '../data/projects'
 
 const Projects = () => {
-  const [showAll, setShowAll] = useState(false)
-
-  const displayedProjects = showAll ? projects : projects.slice(0, 2)
-
   return (
     <section id="projects" className="bg-black text-white py-16 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-3xl font-bold text-teal-400 text-center mb-12">Projects</h2>
 
         <div className="grid md:grid-cols-2 gap-8">
-          {displayedProjects.map((project, idx) => (
+          {projects.map((project, idx) => (
             <div
               key={idx}
               className="relative bg-gray-800 p-6 rounded-xl border-l-4 border-teal-400"
@@ -40,18 +36,6 @@ const Projects = () => {
             </div>
           ))}
         </div>
-
-        {/* View More / Show Less toggle */}
-        {projects.length > 2 && (
-          <div className="text-center mt-10">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="text-teal-400 text-lg underline hover:text-teal-200 transition"
-            >
-              {showAll ? 'Show Less' : 'View More'}
-            </button>
-          </div>
-        )}
       </div>
     </section>
   )

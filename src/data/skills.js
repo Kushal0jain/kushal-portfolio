@@ -94,4 +94,33 @@ export const skills = [
       "Managed repositories, pull requests, and project documentation efficiently.",
     ],
   },
+  {
+    name: "VS Code",
+    // icon: <visual-studio className="text-white" />,
+    icon: (
+      <img
+        src="https://img.icons8.com/color/48/000000/visual-studio-code-2019.png"
+        alt="Visual Studio Code"
+        className="w-12 h-12"
+      />
+    ),
+    description: [
+      "Efficiently worked with VS Code for coding and debugging.",
+      "Utilized extensions like ESLint, Prettier, and Live Server for enhanced development experience.",
+    ],
+  },
+  {
+    name: "OOPS Concepts",
+    icon:(
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQv2nZppWxb1n29A1HiA-umuOhkQNvXU3ymSdMmZ2M3Zl1PoOPIW-K1bDY&s"
+        alt="Object-Oriented Programming"
+        className="w-12 h-12"
+      />
+    ),
+    description: [
+      "Used Git for version control and collaboration in multiple projects.",
+      "Managed branches, commits, and pull requests effectively.",
+    ],
+  }
 ];

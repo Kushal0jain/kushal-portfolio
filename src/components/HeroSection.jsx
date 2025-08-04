@@ -16,8 +16,8 @@ const HeroSection = () => {
         Hey, I'm Kushal Jain
       </h1>
       <p className="text-lg md:text-xl text-gray-300 max-w-2xl">
-        A passionate developer with a love for clean code, creative design, and building
-        meaningful tech experiences.
+        Passionate about building clean, efficient, and scalable web applications.
+        I love turning problems into solutions and learning along the way.
       </p>
       <div className="mt-8 flex gap-4">
         <a

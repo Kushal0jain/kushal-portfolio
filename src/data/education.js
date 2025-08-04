@@ -11,6 +11,18 @@ const education = [
       year: "August 2018 – June 2022",
       grade: "60%",
     },
+    {
+      degree: "Senior Secondary School",
+      institution: "Shree Agraseni Public School",
+      year: "August 2017 – June 2018",
+      grade: "72.3%",
+    },
+    {
+      degree: "Secondary School",
+      institution: "Shree Agraseni Public School",
+      year: "August 2015 – June 2016",
+      grade: "7.6 CGPA",
+    },
   ];
   
   export default education;

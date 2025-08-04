@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const About = () => {
   return (
@@ -9,21 +9,34 @@ const About = () => {
       <h2 className="text-3xl font-bold text-teal-400 mb-6">About Me</h2>
 
       <p className="max-w-4xl text-center text-lg text-gray-300 leading-relaxed">
-        I'm a passionate developer with a background in science, now fully immersed in tech.
-        After completing my MCA from Poornima University, I transitioned into software
-        development, learning and building with Core Java, React, Tailwind CSS, SQL, and backend tools
-        like MySql, MongoDB.
-        <br /><br />
-        I’ve worked on projects like Banking System and a responsive UI for a
-        content analysis platform during my training at FUEL. I love clean code, solving
-        logic problems, and turning ideas into reality.
-        <br /><br />
-        I also worked as Front-End Developer at ZPLYS.AI, where I honed my skills in
-        React, Tailwind CSS, and backend tools like MongoDb. I contributed to
-        the development of a user-friendly and efficient platform for content analysis.
+        I’m Kushal Jain, a passionate and dedicated Software Developer with
+        hands-on experience in both backend and frontend development. I
+        specialize in Core Java, SQL, React.js, and Tailwind CSS, and have built
+        scalable, responsive web applications through internships and real-world
+        projects.
+        <br />
+        <br />
+        During my role as a Java Developer Trainee at FUEL, I deepened my
+        understanding of Java and MySQL, while mastering version control using
+        Git in collaborative environments. As a Frontend Developer at ZPLYS.AI,
+        I contributed to building user-friendly interfaces and enhancing
+        performance in cross-functional team settings.
+        <br />
+        <br />
+        I’ve also worked on key projects like a Banking Application using Java
+        and JDBC, a Weather Application using React and Tailwind CSS, and a
+        Personal Portfolio Website to showcase my work and skills. These
+        projects highlight my ability to combine logical backend systems with
+        dynamic, responsive UIs, while also demonstrating strong frontend design
+        and user experience capabilities.
+        <br />
+        <br />
+        I’m committed to continuous learning and enjoy problem-solving, writing
+        clean code, and collaborating with teams to build impactful digital
+        solutions.
       </p>
     </section>
-  )
-}
+  );
+};
 
-export default About
+export default About;

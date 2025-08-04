@@ -12,64 +12,73 @@ const Contact = () => {
   const [selectedDomain, setSelectedDomain] = useState("gmail.com");
   const [useCustom, setUseCustom] = useState(false);
 
-  const predefinedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com'];
+  const predefinedDomains = [
+    "gmail.com",
+    "yahoo.com",
+    "outlook.com",
+    "hotmail.com",
+    "icloud.com",
+  ];
   const handleChange = (e) => {
     const { name, value } = e.target;
-  
-    if (name === 'emailPrefix' && !useCustom) {
+
+    if (name === "emailPrefix" && !useCustom) {
       // Prevent entering @ in the emailPrefix if using predefined domains
-      if (value.includes('@')) return;
+      if (value.includes("@")) return;
     }
-  
-    if (name === 'customDomain' && useCustom) {
+
+    if (name === "customDomain" && useCustom) {
       const trimmedValue = value.trim().toLowerCase();
       if (predefinedDomains.includes(trimmedValue)) {
         setUseCustom(false);
         setSelectedDomain(trimmedValue);
-        setFormData({ ...formData, customDomain: '' , emailPrefix: ''});
+        setFormData({ ...formData, customDomain: "", emailPrefix: "" });
       }
-      }
-  
+    }
+
     setFormData({
       ...formData,
       [name]: value,
     });
   };
-  
 
   const handleDomainChange = (e) => {
     const value = e.target.value;
     setSelectedDomain(value);
-    if (value === 'other') {
+    if (value === "other") {
       setUseCustom(true);
-      setFormData({ ...formData, emailPrefix: '', customDomain: '' });
+      setFormData({ ...formData, emailPrefix: "", customDomain: "" });
     } else {
       setUseCustom(false);
-      setFormData({ ...formData, customDomain: '' });
+      setFormData({ ...formData, customDomain: "" });
     }
   };
-  
 
   const handleSubmit = (e) => {
     e.preventDefault();
-      const fullEmail = useCustom
+    const fullEmail = useCustom
       ? `${formData.customDomain}`
       : `${formData.emailPrefix}@${selectedDomain}`;
-    console.log({
-      name: formData.name,
-      email: fullEmail,
-      message: formData.message,
-    });
+
+    const message = `Name: ${formData.name}%0AEmail: ${fullEmail}%0AMessage: ${formData.message}`;
+
+    const whatsappNumber = "+917727012340"; // Replace with your WhatsApp number (with country code, no +)
+
+    window.open(
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+
     setFormData({
       name: "",
       emailPrefix: "",
       customDomain: "",
       message: "",
     });
-    setSelectedDomain("");
+    setSelectedDomain("gmail.com");
     setUseCustom(false);
-      toggleForm();
-    };
+    toggleForm();
+  };
 
   return (
     <section id="contact" className="bg-black text-white py-16 px-6 relative">
@@ -160,11 +169,8 @@ const Contact = () => {
                 type="submit"
                 className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 rounded-lg"
               >
-                Send Message
+                Send Message via WhatsApp
               </button>
-              <span className="text-xs text-gray-500 italic">
-                *Not working yet
-              </span>
             </form>
           </div>
         </div>
