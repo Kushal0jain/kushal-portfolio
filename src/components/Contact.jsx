@@ -3,12 +3,14 @@ import React, { useState } from "react";
 const Contact = () => {
   const [showForm, setShowForm] = useState(false);
   const toggleForm = () => setShowForm(!showForm);
+
   const [formData, setFormData] = useState({
     name: "",
     emailPrefix: "",
     customDomain: "",
     message: "",
   });
+
   const [selectedDomain, setSelectedDomain] = useState("gmail.com");
   const [useCustom, setUseCustom] = useState(false);
 
@@ -19,32 +21,32 @@ const Contact = () => {
     "hotmail.com",
     "icloud.com",
   ];
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    if (name === "emailPrefix" && !useCustom) {
-      // Prevent entering @ in the emailPrefix if using predefined domains
-      if (value.includes("@")) return;
-    }
+    // Prevent entering '@' in prefix when using predefined domains
+    if (name === "emailPrefix" && !useCustom && value.includes("@")) return;
 
+    // Auto-switch to predefined if typed custom domain is one of the preset
     if (name === "customDomain" && useCustom) {
-      const trimmedValue = value.trim().toLowerCase();
-      if (predefinedDomains.includes(trimmedValue)) {
+      const trimmed = value.trim().toLowerCase();
+      if (predefinedDomains.includes(trimmed)) {
         setUseCustom(false);
-        setSelectedDomain(trimmedValue);
-        setFormData({ ...formData, customDomain: "", emailPrefix: "" });
+        setSelectedDomain(trimmed);
+        setFormData({ ...formData, customDomain: "" });
+        return;
       }
     }
 
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleDomainChange = (e) => {
     const value = e.target.value;
+
     setSelectedDomain(value);
+
     if (value === "other") {
       setUseCustom(true);
       setFormData({ ...formData, emailPrefix: "", customDomain: "" });
@@ -56,25 +58,28 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     const fullEmail = useCustom
       ? `${formData.customDomain}`
       : `${formData.emailPrefix}@${selectedDomain}`;
 
-    const message = `Name: ${formData.name}%0AEmail: ${fullEmail}%0AMessage: ${formData.message}`;
+    const textMessage = `Name: ${formData.name}%0AEmail: ${fullEmail}%0AMessage: ${formData.message}`;
 
-    const whatsappNumber = "+917727012340"; // Replace with your WhatsApp number (with country code, no +)
+    const whatsappNumber = "917727012340"; // Correct format—no + sign
 
     window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
+      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textMessage)}`,
       "_blank"
     );
 
+    // Reset form
     setFormData({
       name: "",
       emailPrefix: "",
       customDomain: "",
       message: "",
     });
+
     setSelectedDomain("gmail.com");
     setUseCustom(false);
     toggleForm();
@@ -106,9 +111,11 @@ const Contact = () => {
             >
               ×
             </button>
+
             <h3 className="text-2xl font-bold mb-4 text-center text-teal-600">
               Contact Form
             </h3>
+
             <form onSubmit={handleSubmit}>
               <input
                 type="text"
@@ -129,9 +136,10 @@ const Contact = () => {
                   placeholder="Email ID"
                   className="w-1/2 border border-gray-300 px-4 py-2 rounded-lg"
                   disabled={useCustom}
-                  required
+                  required={!useCustom}
                 />
                 <select
+                  value={selectedDomain}
                   onChange={handleDomainChange}
                   className="w-1/2 border border-gray-300 px-4 py-2 rounded-lg"
                 >
@@ -150,7 +158,7 @@ const Contact = () => {
                   name="customDomain"
                   value={formData.customDomain}
                   onChange={handleChange}
-                  placeholder="Enter custom domain (e.g. example.com)"
+                  placeholder="Enter full email (example@domain.com)"
                   className="w-full border border-gray-300 px-4 py-2 rounded-lg mb-4"
                   required
                 />
@@ -165,6 +173,7 @@ const Contact = () => {
                 className="w-full border border-gray-300 px-4 py-2 rounded-lg mb-4"
                 required
               ></textarea>
+
               <button
                 type="submit"
                 className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 rounded-lg"
