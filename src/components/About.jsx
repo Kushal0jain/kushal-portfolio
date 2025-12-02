@@ -9,32 +9,38 @@ const About = () => {
       <h2 className="text-3xl font-bold text-teal-400 mb-6">About Me</h2>
 
       <p className="max-w-4xl text-center text-lg text-gray-300 leading-relaxed">
-        I’m Kushal Jain, a passionate and dedicated Software Developer with
-        hands-on experience in both backend and frontend development. I
-        specialize in Core Java, SQL, React.js, and Tailwind CSS, and have built
-        scalable, responsive web applications through internships and real-world
-        projects.
-        <br />
-        <br />
-        During my role as a Java Developer Trainee at FUEL, I deepened my
-        understanding of Java and MySQL, while mastering version control using
-        Git in collaborative environments. As a Frontend Developer at ZPLYS.AI,
-        I contributed to building user-friendly interfaces and enhancing
-        performance in cross-functional team settings.
-        <br />
-        <br />
-        I’ve also worked on key projects like a Banking Application using Java
-        and JDBC, a Weather Application using React and Tailwind CSS, and a
-        Personal Portfolio Website to showcase my work and skills. These
-        projects highlight my ability to combine logical backend systems with
-        dynamic, responsive UIs, while also demonstrating strong frontend design
-        and user experience capabilities.
-        <br />
-        <br />
-        I’m committed to continuous learning and enjoy problem-solving, writing
-        clean code, and collaborating with teams to build impactful digital
-        solutions.
-      </p>
+  I’m Kushal Jain, a dedicated Software Developer skilled in Java, React.js,
+  TypeScript, Tailwind CSS, and MySQL. I have hands-on experience in building
+  responsive and scalable applications, with a strong foundation in
+  Object-Oriented Programming, Data Structures, Algorithms, and database
+  management.
+  <br />
+  <br />
+  Currently, I’m working as a Frontend Developer Intern at <strong>Ubuy
+  India</strong>, contributing to UI development for a global e-commerce
+  platform. My role involves building responsive interfaces, optimizing
+  performance, and collaborating with cross-functional teams to deliver
+  high-quality user experiences.
+  <br />
+  <br />
+  Previously, I worked as a Frontend Developer at <strong>ZPLYS.AI</strong>,
+  where I developed interactive UIs using React, TypeScript, and Tailwind,
+  implemented scalable component structures, enhanced performance through
+  optimization techniques, and ensured cross-browser compatibility.
+  <br />
+  <br />
+  I’ve also built key projects such as a <strong>Banking Application</strong>
+  using Java, JDBC, and MySQL, and a <strong>Weather Application</strong> using
+  React, TypeScript, and Tailwind CSS with dynamic theme switching and smooth
+  UI transitions. These projects reflect my ability to integrate efficient
+  backend logic with clean, responsive frontend interfaces.
+  <br />
+  <br />
+  I’m committed to continuous learning and enjoy solving problems, writing
+  clean and efficient code, and building meaningful digital products that create
+  impact.
+</p>
+
     </section>
   );
 };
