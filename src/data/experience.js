@@ -2,7 +2,7 @@ const experience = [
     {
       role: "Front-End Developer (Intern)",
       company: "ZPLYS.AI",
-      duration: "October 2025 – April 2025",
+      duration: "October 2024 – April 2025",
       location: "Hybrid",
       description:[
         "Developed a responsive and interactive UI using React.js, Tailwind, and TypeScript.",
