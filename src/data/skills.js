@@ -112,7 +112,7 @@ export const skills = [
   {
     name: "OOPS Concepts",
     icon:(
-      <svg width="128" height="128" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
+      <svg width="64" height="64" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg">
         <rect x="0" y="0" width="128" height="128" rx="12" fill="#1F2937"/>
         <rect x="18" y="16" width="92" height="72" rx="10" fill="#0EA5B7" stroke="#000" stroke-width="4"/>
         <rect x="18" y="16" width="92" height="18" rx="10" fill="#22C1F1" stroke="#000" stroke-width="4"/>
