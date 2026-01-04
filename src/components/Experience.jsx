@@ -10,7 +10,7 @@ const Experience = () => {
           {experience.map((exp, idx) => (
             <div key={idx} className="relative bg-gray-800 p-6 rounded-xl pl-6 border-l-4 border-teal-400">
               <div className="mb-1 text-teal-300 font-semibold">{exp.duration}</div>
-              <h3 className="text-xl font-bold">{exp.title}</h3>
+              <h3 className="text-lg font-semibold">{exp.role}</h3>
               <p className="italic text-gray-400 mb-1">{exp.company}</p>
               <p className="text-gray-300">{exp.description}</p>
             </div>

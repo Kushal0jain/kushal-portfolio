@@ -1,6 +1,6 @@
 const experience = [
     {
-      role: "Front-End Developer (Intern)",
+      role: "Front-End Developer",
       company: "ZPLYS.AI",
       duration: "October 2024 – April 2025",
       location: "Hybrid",
