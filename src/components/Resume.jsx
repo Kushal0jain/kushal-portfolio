@@ -12,7 +12,7 @@ const Resume = () => {
           <a
             href="/Resume_kushal.pdf"
             download
-            className="bg-teal-500 hover:bg-teal-600 text-white font-semibold py-3 px-6 rounded-xl transition-all"
+            className="bg-teal-500 hover:bg-teal-600 text-black font-semibold py-3 px-6 rounded-xl transition-all"
           >
             Download
           </a>

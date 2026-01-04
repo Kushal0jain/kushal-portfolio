@@ -10,6 +10,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-teal-400 transition"
+          aria-label="LinkedIn"
         >
           <FaLinkedin />
         </a>
@@ -18,6 +19,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-teal-400 transition"
+          aria-label="GitHub"
         >
           <FaGithub />
         </a>
@@ -26,6 +28,7 @@ const Footer = () => {
            className="hover:text-teal-400 transition"
            target="_blank"
            rel="noopener noreferrer"
+           aria-label="Email"
         >
           <FaEnvelope />
         </a>
@@ -34,6 +37,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-teal-400 transition"
+          aria-label="Instagram"
         >
           <FaInstagram />
         </a>
@@ -42,6 +46,7 @@ const Footer = () => {
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-teal-400 transition"
+          aria-label="WhatsApp"
         >
           <FaWhatsapp />
         </a>
