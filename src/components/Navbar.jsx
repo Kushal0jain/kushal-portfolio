@@ -16,20 +16,13 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-gray-950 shadow-lg text-white">
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1
-          onClick={() => handleClick('Home')}
-          className="text-2xl font-bold text-teal-400 cursor-pointer"
-        >
+        <h1 onClick={() => handleClick('Home')} className="text-2xl font-bold text-teal-400 cursor-pointer font-poppins">
           Kushal Jain
         </h1>
 
         <div className="hidden md:flex gap-6">
           {navLinks.map((link, i) => (
-            <button
-              key={i}
-              onClick={() => handleClick(link)}
-              className="hover:text-teal-300 transition"
-            >
+            <button key={i} onClick={() => handleClick(link)} className="hover:text-teal-300 transition" >
               {link}
             </button>
           ))}
@@ -53,11 +46,7 @@ const Navbar = () => {
       {isOpen && (
         <div className="md:hidden px-6 pb-4 flex flex-col gap-4">
           {navLinks.map((link, i) => (
-            <button
-              key={i}
-              onClick={() => handleClick(link)}
-              className="text-left hover:text-teal-300 transition"
-            >
+            <button key={i} onClick={() => handleClick(link)} className="text-left hover:text-teal-300 transition">
               {link}
             </button>
           ))}

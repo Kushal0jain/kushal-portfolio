@@ -16,7 +16,7 @@ import Resume from './components/Resume'
 function App() {
   return (
     <div>
-    <div className="bg-black text-white scroll-smooth">
+    <div className="bg-black text-white scroll-smooth font-poppins">
       <Navbar />
       {/* Sections below */}
       <HeroSection />

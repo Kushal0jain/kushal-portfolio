@@ -9,38 +9,39 @@ const About = () => {
       <h2 className="text-3xl font-bold text-teal-400 mb-6">About Me</h2>
 
       <p className="max-w-4xl text-center text-lg text-gray-300 leading-relaxed">
-  I’m Kushal Jain, a dedicated Software Developer skilled in Java, React.js,
-  TypeScript, Tailwind CSS, and MySQL. I have hands-on experience in building
-  responsive and scalable applications, with a strong foundation in
-  Object-Oriented Programming, Data Structures, Algorithms, and database
-  management.
-  <br />
-  <br />
-  Currently, I’m working as a Frontend Developer Intern at <strong>Ubuy
-  India</strong>, contributing to UI development for a global e-commerce
-  platform. My role involves building responsive interfaces, optimizing
-  performance, and collaborating with cross-functional teams to deliver
-  high-quality user experiences.
-  <br />
-  <br />
-  Previously, I worked as a Frontend Developer at <strong>ZPLYS.AI</strong>,
-  where I developed interactive UIs using React, TypeScript, and Tailwind,
-  implemented scalable component structures, enhanced performance through
-  optimization techniques, and ensured cross-browser compatibility.
-  <br />
-  <br />
-  I’ve also built key projects such as a <strong>Banking Application</strong>
-  using Java, JDBC, and MySQL, and a <strong>Weather Application</strong> using
-  React, TypeScript, and Tailwind CSS with dynamic theme switching and smooth
-  UI transitions. These projects reflect my ability to integrate efficient
-  backend logic with clean, responsive frontend interfaces.
-  <br />
-  <br />
-  I’m committed to continuous learning and enjoy solving problems, writing
-  clean and efficient code, and building meaningful digital products that create
-  impact.
-</p>
-
+        I’m Kushal Jain, a Software Developer with strong experience in Java,
+        React.js, TypeScript, Tailwind CSS, and MySQL. I specialize in building
+        responsive, scalable, and maintainable web applications, backed by a
+        solid foundation in Object-Oriented Programming, Data Structures,
+        Algorithms, and database design.
+        <br />
+        <br />
+        Currently, I’m working as a Frontend Developer Intern at{" "}
+        <strong>Ubuy India</strong>, where I contribute to UI development for a
+        global e-commerce platform. My responsibilities include creating
+        responsive user interfaces, optimizing performance, and collaborating
+        with cross-functional teams to deliver high-quality, user-centric
+        experiences.
+        <br />
+        <br />
+        Previously, I worked as a Frontend Developer at{" "}
+        <strong>ZPLYS.AI</strong>, where I built interactive and scalable UI
+        components using React, TypeScript, and Tailwind CSS. I focused on
+        performance optimization, reusable component architecture, and ensuring
+        cross-browser compatibility.
+        <br />
+        <br />I have also developed impactful projects such as a{" "}
+        <strong>Banking Application</strong> using Java, JDBC, and MySQL, and a{" "}
+        <strong>Weather Application</strong> built with React, TypeScript, and
+        Tailwind CSS, featuring dynamic theme switching and smooth UI
+        transitions. These projects demonstrate my ability to combine efficient
+        backend logic with clean, responsive frontend design.
+        <br />
+        <br />
+        I’m passionate about continuous learning and enjoy solving complex
+        problems, writing clean and efficient code, and building meaningful
+        digital products that create real-world impact.
+      </p>
     </section>
   );
 };
