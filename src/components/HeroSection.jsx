@@ -3,8 +3,7 @@ import React from 'react'
 const HeroSection = () => {
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center items-center bg-black text-white px-4 text-center">
-      <img src="/profile.jpg" alt="Kushal Jain" className="w-32 h-32  rounded-full object-cover border-4 border-teal-400 mb-6" height={985} width={980}/>
-      {/* md:w-40 md:h-40 */}
+      <img src="/profile.jpg" alt="Kushal Jain" className="w-32 h-32 md:w-40 md:h-40 rounded-full object-cover border-4 border-teal-400 mb-6"/>
 
       <h1 className="text-4xl md:text-6xl font-bold text-teal-400 mb-4">
         Hey, I'm Kushal Jain
