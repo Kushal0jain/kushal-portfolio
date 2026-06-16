@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { FiX } from 'react-icons/fi';
 import { skills } from '../data/skills';
 
 const accentColors = [
@@ -8,7 +9,10 @@ const accentColors = [
 ];
 
 const Skills = () => {
-  const [hovered, setHovered] = useState(null);
+  const [selected, setSelected] = useState(null);
+
+  const skill   = selected !== null ? skills[selected]       : null;
+  const color   = selected !== null ? (accentColors[selected] || '#14b8a6') : '#14b8a6';
 
   return (
     <section id="skills" className="py-24 px-6 bg-white/[.012]">
@@ -20,48 +24,62 @@ const Skills = () => {
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-          {skills.map((skill, idx) => {
-            const color     = accentColors[idx] || '#14b8a6';
-            const isHovered = hovered === idx;
+          {skills.map((s, idx) => {
+            const c = accentColors[idx] || '#14b8a6';
             return (
-              <div
+              <button
                 key={idx}
-                className="glass-card rounded-xl p-3.5 flex flex-col items-center text-center section-reveal skill-card cursor-pointer"
+                onClick={() => setSelected(idx)}
+                className="glass-card rounded-xl p-3.5 flex flex-col items-center text-center skill-card cursor-pointer focus:outline-none"
                 style={{ transitionDelay: `${(idx % 4) * 70}ms` }}
-                onMouseEnter={() => setHovered(idx)}
-                onMouseLeave={() => setHovered(null)}
               >
+                <div className="text-3xl mb-2">{s.icon}</div>
+                <h3 className="font-semibold text-xs text-white mb-1.5">{s.name}</h3>
                 <div
-                  className="text-3xl mb-2 transition-all duration-300"
-                  style={{
-                    transform: isHovered ? 'scale(1.25) rotate(-6deg)' : 'scale(1)',
-                    filter:    isHovered ? `drop-shadow(0 0 8px ${color}80)` : 'none',
-                  }}
-                >
-                  {skill.icon}
-                </div>
-
-                <h3 className="font-semibold text-xs text-white mb-1.5">{skill.name}</h3>
-
-                <div
-                  className="overflow-hidden w-full transition-all duration-300"
-                  style={{ maxHeight: isHovered ? '80px' : '0', opacity: isHovered ? 1 : 0 }}
-                >
-                  <p className="text-xs text-slate-400 leading-relaxed">{skill.description[0]}</p>
-                </div>
-
-                <div
-                  className="mt-3 h-0.5 rounded-full transition-all duration-500"
-                  style={{
-                    width:      isHovered ? '65%' : '0%',
-                    background: `linear-gradient(90deg, ${color}, transparent)`,
-                  }}
+                  className="h-0.5 rounded-full w-8"
+                  style={{ background: c }}
                 />
-              </div>
+              </button>
             );
           })}
         </div>
       </div>
+
+      {/* Modal */}
+      {skill && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center p-4"
+          style={{ background: 'rgba(0,0,0,.6)', backdropFilter: 'blur(6px)' }}
+          onClick={() => setSelected(null)}
+        >
+          <div
+            className="glass-card rounded-2xl p-7 max-w-sm w-full relative"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelected(null)}
+              className="absolute top-4 right-4 text-slate-400 hover:text-white transition-colors"
+              aria-label="Close"
+            >
+              <FiX size={18} />
+            </button>
+
+            <div className="text-5xl mb-4">{skill.icon}</div>
+            <h3 className="text-xl font-bold text-white mb-1">{skill.name}</h3>
+            <p className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color }}>
+              {skill.level}
+            </p>
+            <ul className="space-y-2">
+              {skill.description.map((line, i) => (
+                <li key={i} className="flex items-start gap-2.5 text-slate-300 text-sm leading-relaxed">
+                  <span className="mt-2 w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: color }} />
+                  {line}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
