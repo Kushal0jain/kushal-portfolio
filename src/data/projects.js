@@ -1,17 +1,5 @@
 const projects = [
   {
-    title: "Banking Application",
-    category: "Java",
-    techStack: "Core Java, JDBC, MySQL",
-    description: [
-      "Built a CLI-based banking system in Core Java managing accounts, deposits, withdrawals, and fund transfers.",
-      "Integrated JDBC with MySQL for persistent storage of transaction history and account balances.",
-      "Applied OOP principles — inheritance, encapsulation, polymorphism — for a clean, modular architecture.",
-      "Implemented secure transaction logic with rollback support for failed operations.",
-    ],
-    link: "https://github.com/Kushal0jain/Banking_Application",
-  },
-  {
     title: "ZPLYS.AI – Company Project",
     category: "React",
     techStack: "React, TypeScript, Tailwind CSS",
@@ -22,6 +10,18 @@ const projects = [
       "Collaborated with a 4-person team using Git branching strategies for continuous feature delivery.",
     ],
     link: "https://zplys.ai/landing",
+  },
+  {
+  title: "Portfolio Website",
+  category: "React",
+  techStack: "React, Tailwind CSS",
+  description: [
+    "Designed and built a responsive glassmorphism portfolio with scroll-reveal animations and a typewriter hero.",
+    "Added WhatsApp-integrated contact form, custom SVG favicon, and SVG scroll-progress indicator.",
+    "Achieved 95+ Lighthouse score across performance, accessibility, and SEO metrics.",
+    "Deployed on Netlify with continuous deployment connected to GitHub.",
+  ],
+  link: "https://kushal-jain-portfolio.netlify.app/",
   },
   {
     title: "Weather Application",
@@ -36,17 +36,17 @@ const projects = [
     link: "https://github.com/Kushal0jain/weather-app",
   },
   {
-    title: "Portfolio Website",
-    category: "React",
-    techStack: "React, Tailwind CSS",
+    title: "Banking Application",
+    category: "Java",
+    techStack: "Core Java, JDBC, MySQL",
     description: [
-      "Designed and built a responsive glassmorphism portfolio with scroll-reveal animations and a typewriter hero.",
-      "Added WhatsApp-integrated contact form, custom SVG favicon, and SVG scroll-progress indicator.",
-      "Achieved 95+ Lighthouse score across performance, accessibility, and SEO metrics.",
-      "Deployed on Netlify with continuous deployment connected to GitHub.",
+      "Built a CLI-based banking system in Core Java managing accounts, deposits, withdrawals, and fund transfers.",
+      "Integrated JDBC with MySQL for persistent storage of transaction history and account balances.",
+      "Applied OOP principles — inheritance, encapsulation, polymorphism — for a clean, modular architecture.",
+      "Implemented secure transaction logic with rollback support for failed operations.",
     ],
-    link: "https://kushal-jain-portfolio.netlify.app/",
-  }
+    link: "https://github.com/Kushal0jain/Banking_Application",
+  },
 ];
 
 export default projects;

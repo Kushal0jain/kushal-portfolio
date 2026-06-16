@@ -72,27 +72,22 @@
 
   /* Gradient text */
   .gradient-text {
-    @apply bg-gradient-to-br from-teal-500 via-violet-500 to-cyan-500 bg-clip-text text-transparent;
+    @apply text-teal-500;
   }
 
-  /* Scroll reveal (JS-toggled: .revealed cancels the fallback animation) */
-  .section-reveal {
-    animation: autoRevealUp 0.7s cubic-bezier(.25,.46,.45,.94) 1.5s both;
-    transition: opacity .75s cubic-bezier(.25,.46,.45,.94), transform .75s cubic-bezier(.25,.46,.45,.94);
+  /* Scroll reveal */
+  @keyframes simpleFade {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
-  .section-reveal.revealed        { animation: none; @apply opacity-100 translate-y-0; }
-
-  .section-reveal-left {
-    animation: autoRevealLeft 0.7s cubic-bezier(.25,.46,.45,.94) 1.5s both;
-    transition: opacity .75s cubic-bezier(.25,.46,.45,.94), transform .75s cubic-bezier(.25,.46,.45,.94);
-  }
-  .section-reveal-left.revealed   { animation: none; @apply opacity-100 translate-x-0; }
-
+  .section-reveal,
+  .section-reveal-left,
   .section-reveal-right {
-    animation: autoRevealRight 0.7s cubic-bezier(.25,.46,.45,.94) 1.5s both;
-    transition: opacity .75s cubic-bezier(.25,.46,.45,.94), transform .75s cubic-bezier(.25,.46,.45,.94);
+    animation: simpleFade 0.35s ease both;
   }
-  .section-reveal-right.revealed  { animation: none; @apply opacity-100 translate-x-0; }
+  .section-reveal.revealed,
+  .section-reveal-left.revealed,
+  .section-reveal-right.revealed  { animation: none; @apply opacity-100; }
 
   /* Nav link underline */
   .nav-link { @apply relative transition-colors duration-300; }

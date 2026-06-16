@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-black/[.55] border-t border-white/[.06]">
+    <footer className="bg-[var(--glass-bg)] border-t border-[var(--glass-border)] transition-colors duration-300">
       <div className="max-w-6xl mx-auto px-6 py-12">
 
         <div className="grid md:grid-cols-3 gap-10 mb-8">
@@ -75,7 +75,7 @@ const Footer = () => {
         </div>
 
         {/* Bottom bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-white/[.06]">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-[var(--glass-border)]">
           <p className="text-slate-600 text-sm">
             © {new Date().getFullYear()} Kushal Jain. All rights reserved.
           </p>

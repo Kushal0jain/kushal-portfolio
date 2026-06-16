@@ -50,7 +50,7 @@ const Experience = () => (
                       className="px-3 py-1 rounded-full text-xs font-semibold flex-shrink-0"
                       style={{ background: `${color}18`, color, border: `1px solid ${color}35` }}
                     >
-                      {idx === 0 ? 'Current' : 'Previous'}
+                      {exp.duration.includes('Present') ? 'Current' : 'Previous'}
                     </span>
                   </div>
 

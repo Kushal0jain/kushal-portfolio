@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FiArrowUpRight } from 'react-icons/fi';
 import projects from '../data/projects';
 
@@ -9,14 +9,8 @@ const bannerGradients = [
   'linear-gradient(135deg, #3b82f6, #8b5cf6)',
 ];
 
-const FILTERS = ['All', 'React', 'Java'];
-
 const Projects = () => {
-  const [filter, setFilter] = useState('All');
-
-  const visible = filter === 'All'
-    ? projects
-    : projects.filter((p) => p.category === filter);
+  const visible = projects;
 
   return (
     <section id="projects" className="py-24 px-6">
@@ -29,7 +23,7 @@ const Projects = () => {
         </div>
 
         {/* Filter tabs */}
-        <div className="flex justify-center gap-3 mb-12 section-reveal">
+        {/* <div className="flex justify-center gap-3 mb-12 section-reveal">
           {FILTERS.map((f) => (
             <button
               key={f}
@@ -63,7 +57,7 @@ const Projects = () => {
               )}
             </button>
           ))}
-        </div>
+        </div> */}
 
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-6">

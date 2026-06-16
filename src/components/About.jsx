@@ -91,10 +91,7 @@ const About = () => (
 
           {/* Live status */}
           <div className="col-span-2 rounded-2xl p-5 flex items-center gap-4 bg-teal-500/[.06] border border-teal-500/20">
-            <div className="relative flex-shrink-0">
-              <div className="w-3 h-3 rounded-full bg-teal-400" />
-              <div className="absolute inset-0 rounded-full bg-teal-400 animate-ping opacity-60" />
-            </div>
+            <div className="w-3 h-3 rounded-full bg-teal-400 flex-shrink-0" />
             <div>
               <p className="text-white font-semibold text-sm">Currently at Ubuy India</p>
               <p className="text-slate-400 text-xs mt-0.5">Frontend Developer · Jaipur, India · Aug 2025 – Present</p>
