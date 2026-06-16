@@ -1,189 +1,212 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
+import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
+
+const predefinedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com'];
+
+const contactInfo = [
+  { icon: FiMail,    label: 'Email',    value: 'jainkushal0909@gmail.com', href: 'mailto:jainkushal0909@gmail.com' },
+  { icon: FiPhone,   label: 'Phone',    value: '+91 7727012340',            href: 'tel:+917727012340' },
+  { icon: FiMapPin,  label: 'Location', value: 'Jaipur, Rajasthan, India',  href: null },
+];
+
+const socials = [
+  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/kushal-jain-0a2554204/', label: 'LinkedIn' },
+  { icon: FaGithub,   href: 'https://github.com/Kushal0jain',                      label: 'GitHub' },
+  { icon: FaInstagram,href: 'https://www.instagram.com/kushal._._.jain/',          label: 'Instagram' },
+  { icon: FaWhatsapp, href: 'https://wa.me/917727012340',                           label: 'WhatsApp' },
+];
 
 const Contact = () => {
-  const [showForm, setShowForm] = useState(false);
-  const toggleForm = () => setShowForm(!showForm);
-
-  const [formData, setFormData] = useState({
-    name: "",
-    emailPrefix: "",
-    customDomain: "",
-    message: "",
-  });
-
-  const [selectedDomain, setSelectedDomain] = useState("gmail.com");
-  const [useCustom, setUseCustom] = useState(false);
-
-  const predefinedDomains = [
-    "gmail.com",
-    "yahoo.com",
-    "outlook.com",
-    "hotmail.com",
-    "icloud.com",
-  ];
+  const [formData,       setFormData]       = useState({ name: '', emailPrefix: '', customDomain: '', message: '' });
+  const [selectedDomain, setSelectedDomain] = useState('gmail.com');
+  const [useCustom,      setUseCustom]      = useState(false);
+  const [submitted,      setSubmitted]      = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
-    // Prevent entering '@' in prefix when using predefined domains
-    if (name === "emailPrefix" && !useCustom && value.includes("@")) return;
-
-    // Auto-switch to predefined if typed custom domain is one of the preset
-    if (name === "customDomain" && useCustom) {
-      const trimmed = value.trim().toLowerCase();
-      if (predefinedDomains.includes(trimmed)) {
-        setUseCustom(false);
-        setSelectedDomain(trimmed);
-        setFormData({ ...formData, customDomain: "" });
-        return;
-      }
-    }
-
+    if (name === 'emailPrefix' && !useCustom && value.includes('@')) return;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleDomainChange = (e) => {
     const value = e.target.value;
-
     setSelectedDomain(value);
-
-    if (value === "other") {
+    if (value === 'other') {
       setUseCustom(true);
-      setFormData({ ...formData, emailPrefix: "", customDomain: "" });
+      setFormData({ ...formData, emailPrefix: '', customDomain: '' });
     } else {
       setUseCustom(false);
-      setFormData({ ...formData, customDomain: "" });
+      setFormData({ ...formData, customDomain: '' });
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const fullEmail = useCustom
-      ? `${formData.customDomain}`
+      ? formData.customDomain
       : `${formData.emailPrefix}@${selectedDomain}`;
-
-    const textMessage = `Name: ${formData.name}%0AEmail: ${fullEmail}%0AMessage: ${formData.message}`;
-
-    const whatsappNumber = "917727012340"; // Correct format—no + sign
-
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(textMessage)}`,
-      "_blank"
-    );
-
-    // Reset form
-    setFormData({
-      name: "",
-      emailPrefix: "",
-      customDomain: "",
-      message: "",
-    });
-
-    setSelectedDomain("gmail.com");
+    const msg = `Name: ${formData.name}\nEmail: ${fullEmail}\nMessage: ${formData.message}`;
+    window.open(`https://wa.me/917727012340?text=${encodeURIComponent(msg)}`, '_blank');
+    setFormData({ name: '', emailPrefix: '', customDomain: '', message: '' });
+    setSelectedDomain('gmail.com');
     setUseCustom(false);
-    toggleForm();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 4000);
   };
 
   return (
-    <section id="contact" className="bg-black text-white py-16 px-6 relative">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl font-bold text-teal-400 mb-6">Let's Connect</h2>
-        <p className="text-gray-300 mb-8">
-          I'd love to connect with you! Whether you have a project in mind or
-          just want to chat, feel free to reach out. I'm always open to new
-          opportunities and collaborations.
-        </p>
-        <button
-          onClick={toggleForm}
-          className="bg-teal-500 hover:bg-teal-400 text-black font-semibold px-6 py-3 rounded-full transition"
-        >
-          Contact Me
-        </button>
-      </div>
+    <section id="contact" className="py-24 px-6">
+      <div className="max-w-6xl mx-auto">
 
-      {showForm && (
-        <div className="fixed inset-0 bg-black bg-opacity-60 flex justify-center items-center z-50">
-          <div className="bg-white text-black p-6 rounded-xl w-full max-w-md shadow-xl relative">
-            <button
-              onClick={toggleForm}
-              className="absolute top-2 right-3 text-xl font-bold text-gray-500 hover:text-red-500"
-            >
-              ×
-            </button>
+        {/* Header */}
+        <div className="text-center mb-16 section-reveal">
+          <p className="text-teal-400 text-sm font-semibold tracking-widest uppercase mb-3">Get In Touch</p>
+          <h2 className="section-title">Let's Connect</h2>
+          <p className="text-slate-400 mt-4 max-w-md mx-auto text-sm">
+            I'm always open to new opportunities and collaborations. Feel free to reach out!
+          </p>
+        </div>
 
-            <h3 className="text-2xl font-bold mb-4 text-center text-teal-600">
-              Contact Form
-            </h3>
+        <div className="grid lg:grid-cols-2 gap-12">
 
-            <form onSubmit={handleSubmit}>
-              <input
-                type="text"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                placeholder="Your Name"
-                className="w-full border border-gray-300 px-4 py-2 rounded-lg mb-4"
-                required
-              />
-
-              <div className="flex gap-2 mb-4">
-                <input
-                  type="text"
-                  name="emailPrefix"
-                  value={formData.emailPrefix}
-                  onChange={handleChange}
-                  placeholder="Email ID"
-                  className="w-1/2 border border-gray-300 px-4 py-2 rounded-lg"
-                  disabled={useCustom}
-                  required={!useCustom}
-                />
-                <select
-                  value={selectedDomain}
-                  onChange={handleDomainChange}
-                  className="w-1/2 border border-gray-300 px-4 py-2 rounded-lg"
-                >
-                  <option value="gmail.com">@gmail.com</option>
-                  <option value="yahoo.com">@yahoo.com</option>
-                  <option value="outlook.com">@outlook.com</option>
-                  <option value="hotmail.com">@hotmail.com</option>
-                  <option value="icloud.com">@icloud.com</option>
-                  <option value="other">Other</option>
-                </select>
+          {/* Left – Info */}
+          <div className="section-reveal-left space-y-8">
+            <div>
+              <h3 className="text-xl font-bold text-white mb-6">Contact Information</h3>
+              <div className="space-y-5">
+                {contactInfo.map(({ icon: Icon, label, value, href }) => (
+                  <div key={label} className="flex items-center gap-4">
+                    <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 bg-teal-500/10 text-teal-500 border border-teal-500/20">
+                      <Icon size={16} />
+                    </div>
+                    <div>
+                      <p className="text-slate-500 text-xs font-medium uppercase tracking-wider">{label}</p>
+                      {href ? (
+                        <a href={href} className="text-white text-sm font-medium hover:text-teal-400 transition-colors">
+                          {value}
+                        </a>
+                      ) : (
+                        <p className="text-white text-sm font-medium">{value}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
+            </div>
 
-              {useCustom && (
-                <input
-                  type="email"
-                  name="customDomain"
-                  value={formData.customDomain}
-                  onChange={handleChange}
-                  placeholder="Enter full email (example@domain.com)"
-                  className="w-full border border-gray-300 px-4 py-2 rounded-lg mb-4"
-                  required
-                />
+            {/* Socials */}
+            {/* <div>
+              <h4 className="text-white font-semibold text-sm mb-4">Follow Me</h4>
+              <div className="flex gap-3">
+                {socials.map(({ icon: Icon, href, label }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={label}
+                    className="social-icon"
+                  >
+                    <Icon />
+                  </a>
+                ))}
+              </div>
+            </div> */}
+
+            {/* WhatsApp CTA */}
+            <a
+              href="https://wa.me/917727012340?text=Hi%20Kushal!%20I%20want%20to%20connect%20with%20you."
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-3 px-7 py-4 rounded-2xl font-semibold text-white transition-all duration-300 hover:scale-105 bg-gradient-to-br from-[#25d366] to-[#128c7e] shadow-[0_6px_25px_rgba(37,211,102,.3)]"
+            >
+              <FaWhatsapp size={22} />
+              Chat on WhatsApp
+            </a>
+          </div>
+
+          {/* Right – Form */}
+          <div className="section-reveal-right">
+            <div className="glass-card rounded-2xl p-7">
+              <h3 className="text-lg font-bold text-white mb-6">Send a Message</h3>
+
+              {submitted && (
+                <div className="mb-5 px-4 py-3 rounded-xl text-sm font-medium bg-teal-500/10 text-teal-500 border border-teal-500/25">
+                  Message sent via WhatsApp! Thank you 🙌
+                </div>
               )}
 
-              <textarea
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Your Message"
-                rows="4"
-                className="w-full border border-gray-300 px-4 py-2 rounded-lg mb-4"
-                required
-              ></textarea>
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  placeholder="Your Name"
+                  className="form-input"
+                  required
+                />
 
-              <button
-                type="submit"
-                className="w-full bg-teal-500 hover:bg-teal-600 text-white font-semibold py-2 rounded-lg"
-              >
-                Send Message via WhatsApp
-              </button>
-            </form>
+                <div className="flex gap-3">
+                  <input
+                    type="text"
+                    name="emailPrefix"
+                    value={formData.emailPrefix}
+                    onChange={handleChange}
+                    placeholder="Email ID"
+                    className="form-input flex-1"
+                    disabled={useCustom}
+                    required={!useCustom}
+                  />
+                  <select
+                    value={selectedDomain}
+                    onChange={handleDomainChange}
+                    className="form-input flex-1"
+                  >
+                    {predefinedDomains.map((d) => (
+                      <option key={d} value={d}>@{d}</option>
+                    ))}
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {useCustom && (
+                  <input
+                    type="email"
+                    name="customDomain"
+                    value={formData.customDomain}
+                    onChange={handleChange}
+                    placeholder="Full email (e.g. you@domain.com)"
+                    className="form-input"
+                    required
+                  />
+                )}
+
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your Message..."
+                  rows={4}
+                  className="form-input resize-none"
+                  required
+                />
+
+                <button
+                  type="submit"
+                  className="w-full btn-primary py-3.5 text-sm flex items-center justify-center gap-2"
+                >
+                  <span className="relative z-10 flex items-center gap-2">
+                    <FiSend size={15} />
+                    Send via WhatsApp
+                  </span>
+                </button>
+              </form>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </section>
   );
 };

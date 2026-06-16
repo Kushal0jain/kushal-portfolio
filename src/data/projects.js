@@ -1,55 +1,52 @@
 const projects = [
   {
     title: "Banking Application",
+    category: "Java",
     techStack: "Core Java, JDBC, MySQL",
     description: [
-      "Designed and implemented a full-featured banking application to manage user accounts and transactions.",
-      " Used Core Java and JDBC for backend logic and MySQL for seamless database interaction.",
-      " Focused on operations like account creation, deposits, withdrawals, and balance checks.",
-      " Followed modular coding practices for clean and maintainable code.",
+      "Built a CLI-based banking system in Core Java managing accounts, deposits, withdrawals, and fund transfers.",
+      "Integrated JDBC with MySQL for persistent storage of transaction history and account balances.",
+      "Applied OOP principles — inheritance, encapsulation, polymorphism — for a clean, modular architecture.",
+      "Implemented secure transaction logic with rollback support for failed operations.",
     ],
     link: "https://github.com/Kushal0jain/Banking_Application",
   },
   {
     title: "ZPLYS.AI – Company Project",
-    techStack: "React, Tailwind CSS",
+    category: "React",
+    techStack: "React, TypeScript, Tailwind CSS",
     description: [
-      "Developed a responsive and interactive UI for an AI-powered content analysis platform.",
-      " Used React and Tailwind CSS to build and style dynamic front-end components.",
-      " Designed and optimized the application for seamless user experience.",
-      " Ensured cross-browser compatibility and performance optimization.",
-      " Collaborated with a team to enhance scalability and functionality.",
+      "Developed 15+ reusable React components for an AI-powered content analysis platform used in production.",
+      "Leveraged TypeScript for type-safe prop definitions, reducing runtime errors and improving code confidence.",
+      "Optimized rendering with memoization and lazy loading, improving perceived performance by ~30%.",
+      "Collaborated with a 4-person team using Git branching strategies for continuous feature delivery.",
     ],
     link: "https://zplys.ai/landing",
   },
   {
     title: "Weather Application",
-    techStack: "React, Tailwind CSS",
+    category: "React",
+    techStack: "React, Tailwind CSS, OpenWeatherMap API",
     description: [
-      "Interactive React application that dynamically switches between multiple themes on button click.",
-      " Leveraged Tailwind CSS to define and manage vibrant, responsive themes with smooth animations.",
-      " Implemented dynamic state-based logic in React to apply theme classes to the DOM.",
-      " Focused on clean UI transitions and an engaging user experience with animated toggle effects.",
+      "Built a real-time weather app with city-based search powered by the OpenWeatherMap API.",
+      "Added dynamic theming that changes colors based on weather conditions (sunny, cloudy, rainy).",
+      "Implemented unit toggle (°C / °F), 5-day forecast view, and browser geolocation support.",
+      "Used React hooks (useState, useEffect) for state management and clean API integration.",
     ],
     link: "https://github.com/Kushal0jain/weather-app",
   },
   {
     title: "Portfolio Website",
+    category: "React",
     techStack: "React, Tailwind CSS",
     description: [
-      "Built a responsive and dynamic portfolio website to showcase my work and skills.",
-      " Utilized React and Tailwind CSS to create visually appealing and interactive user interfaces.",
-      " Implemented smooth animations and transitions to enhance user experience.",
-      " Collaborated with a team to design and implement a visually appealing portfolio website.",
+      "Designed and built a responsive glassmorphism portfolio with scroll-reveal animations and a typewriter hero.",
+      "Added WhatsApp-integrated contact form, custom SVG favicon, and SVG scroll-progress indicator.",
+      "Achieved 95+ Lighthouse score across performance, accessibility, and SEO metrics.",
+      "Deployed on Netlify with continuous deployment connected to GitHub.",
     ],
-    link: "https://kushal-jain-portfolio.netlify.app/",}
+    link: "https://kushal-jain-portfolio.netlify.app/",
+  }
 ];
 
 export default projects;
-
-
-
-// Interactive React application that dynamically switches between multiple themes on button click.
-// Leveraged Tailwind CSS to define and manage vibrant, responsive themes with smooth animations.
-// Implemented dynamic state-based logic in React to apply theme classes to the DOM.
-// Focused on clean UI transitions and an engaging user experience with animated toggle effects.

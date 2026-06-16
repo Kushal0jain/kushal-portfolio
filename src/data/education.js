@@ -3,7 +3,7 @@ const education = [
       degree: "Master of Computer Applications (MCA)",
       institution: "Poornima University",
       year: "August 2022 – June 2024",
-      grade: "6.7 CGPA",
+      grade: "6.8 CGPA",
     },
     {
       degree: "Bachelor of Science (B.Sc.)",
