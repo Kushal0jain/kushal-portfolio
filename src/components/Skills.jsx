@@ -19,20 +19,20 @@ const Skills = () => {
           <h2 className="section-title">Skills & Technologies</h2>
         </div>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           {skills.map((skill, idx) => {
             const color     = accentColors[idx] || '#14b8a6';
             const isHovered = hovered === idx;
             return (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-5 flex flex-col items-center text-center section-reveal skill-card cursor-pointer"
+                className="glass-card rounded-xl p-3.5 flex flex-col items-center text-center section-reveal skill-card cursor-pointer"
                 style={{ transitionDelay: `${(idx % 4) * 70}ms` }}
                 onMouseEnter={() => setHovered(idx)}
                 onMouseLeave={() => setHovered(null)}
               >
                 <div
-                  className="text-4xl mb-3 transition-all duration-300"
+                  className="text-3xl mb-2 transition-all duration-300"
                   style={{
                     transform: isHovered ? 'scale(1.25) rotate(-6deg)' : 'scale(1)',
                     filter:    isHovered ? `drop-shadow(0 0 8px ${color}80)` : 'none',
@@ -41,7 +41,7 @@ const Skills = () => {
                   {skill.icon}
                 </div>
 
-                <h3 className="font-bold text-sm text-white mb-2">{skill.name}</h3>
+                <h3 className="font-semibold text-xs text-white mb-1.5">{skill.name}</h3>
 
                 <div
                   className="overflow-hidden w-full transition-all duration-300"
