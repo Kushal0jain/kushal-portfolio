@@ -46,7 +46,7 @@ const HeroSection = () => (
         {/* Right – Profile image */}
         <div className="flex-shrink-0">
           <div className="w-64 h-64 md:w-72 md:h-72 rounded-full overflow-hidden border border-teal-500/30">
-            <img src="/kushal.jpg" alt="Kushal Jain" className="w-full h-full object-cover" />
+            <img src="/kushal.jpg" alt="Kushal Jain" className="w-full h-full object-cover" fetchpriority="high" decoding="async" />
           </div>
         </div>
 
