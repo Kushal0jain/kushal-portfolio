@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp, FaEnvelope } from 'react-icons/fa';
 import { FiArrowDown } from 'react-icons/fi';
 
 /* ── Typewriter ─────────────────────────────────────────── */
@@ -42,14 +41,6 @@ const Typewriter = () => {
 };
 
 /* ── Data ───────────────────────────────────────────────── */
-const socials = [
-  { icon: FaLinkedin,  href: 'https://www.linkedin.com/in/kushal-jain-0a2554204/', label: 'LinkedIn' },
-  { icon: FaGithub,    href: 'https://github.com/Kushal0jain',                      label: 'GitHub' },
-  { icon: FaInstagram, href: 'https://www.instagram.com/kushal._._.jain/',          label: 'Instagram' },
-  { icon: FaWhatsapp,  href: 'https://wa.me/917727012340',                           label: 'WhatsApp' },
-  { icon: FaEnvelope,  href: 'mailto:jainkushal0909@gmail.com',                      label: 'Email' },
-];
-
 const techBadges = [
   { label: 'React',      angle:   0 },
   { label: 'Java',       angle:  72 },

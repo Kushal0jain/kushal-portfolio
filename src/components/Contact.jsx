@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from 'react-icons/fa';
+import { FaWhatsapp } from 'react-icons/fa';
 import { FiMail, FiPhone, FiMapPin, FiSend } from 'react-icons/fi';
 
 const predefinedDomains = ['gmail.com', 'yahoo.com', 'outlook.com', 'hotmail.com', 'icloud.com'];
@@ -8,13 +8,6 @@ const contactInfo = [
   { icon: FiMail,    label: 'Email',    value: 'jainkushal0909@gmail.com', href: 'mailto:jainkushal0909@gmail.com' },
   { icon: FiPhone,   label: 'Phone',    value: '+91 7727012340',            href: 'tel:+917727012340' },
   { icon: FiMapPin,  label: 'Location', value: 'Jaipur, Rajasthan, India',  href: null },
-];
-
-const socials = [
-  { icon: FaLinkedin, href: 'https://www.linkedin.com/in/kushal-jain-0a2554204/', label: 'LinkedIn' },
-  { icon: FaGithub,   href: 'https://github.com/Kushal0jain',                      label: 'GitHub' },
-  { icon: FaInstagram,href: 'https://www.instagram.com/kushal._._.jain/',          label: 'Instagram' },
-  { icon: FaWhatsapp, href: 'https://wa.me/917727012340',                           label: 'WhatsApp' },
 ];
 
 const Contact = () => {
