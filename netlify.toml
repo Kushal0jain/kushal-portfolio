@@ -1,0 +1,26 @@
+[build]
+  command = "npm run build"
+  publish = "build"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+# `npm run dev` starts everything on http://localhost:3000 — the site, the
+# admin panel and its /api/* functions. The React dev server itself runs
+# behind it on port 3001.
+[dev]
+  command = "npm run dev:site"
+  targetPort = 3001
+  port = 3000
+  framework = "#custom"
+
+[context.dev.environment]
+  PORT = "3001"
+  BROWSER = "none"
+
+[[headers]]
+  for = "/admin*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Frame-Options = "DENY"
